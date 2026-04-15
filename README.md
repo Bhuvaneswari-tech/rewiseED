@@ -1,60 +1,41 @@
-# RewiseED FastAPI Backend Project
-
-This is the backend of the RewiseED application built using FastAPI and integrated with MongoDB Atlas.
+# RewiseED FastAPI Backend Project Structure
 
 ## Project Structure
 ```
 rewiseED/
-│
 ├── app/
-│   ├── __init__.py
 │   ├── main.py
 │   ├── models/
-│   │   ├── __init__.py
-│   │   ├── user.py
-│   │   ├── article.py
-│   │   └── ...
-│   ├── schemas/
-│   │   ├── __init__.py
-│   │   ├── user.py
-│   │   ├── article.py
-│   │   └── ...
+│   ├── routers/
 │   ├── services/
-│   │   ├── __init__.py
-│   │   ├── user_service.py
-│   │   ├── article_service.py
-│   │   └── ...
-│   ├── configs/
-│   │   ├── __init__.py
-│   │   ├── config.py
-│   └── docs/
-│       └── api_docs.md
-├── .env.example
+│   ├── utils/
+│   └── config.py
+├── tests/
+│   ├── test_main.py
+│   └── test_routers.py
 ├── requirements.txt
-└── Dockerfile
-```  
+└── README.md
+```
 
-### Requirements
-- FastAPI
-- uvicorn
-- pymongo
-- python-dotenv
-- pydantic
+## Setup Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Bhuvaneswari-tech/rewiseED.git
+   cd rewiseED
+   ```
+2. Install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the application:
+   ```bash
+   uvicorn app.main:app --host 0.0.0.0 --port 8000
+   ```
 
-### Setup
-1. Clone the repository.
-2. Copy `.env.example` to `.env` and fill in the required variables for MongoDB Atlas.
-3. Run the server:
-```bash
-uvicorn app.main:app --reload
-``` 
-
-### Docker
-To build and run with Docker:
-```bash
-docker build -t rewiseed .
-docker run -d -p 8000:8000 rewiseed
-``` 
-
-### Documentation
-Refer to the `docs/api_docs.md` for API documentation.
+## Features
+- **FastAPI**: A modern, fast (high-performance), web framework for building APIs with Python 3.6+.
+- **Asynchronous Support**: Fully supports asynchronous programming with async and await.
+- **Easy to Use**: Simple and easy to use for both beginners and experts.
+- **Dependency Injection**: Built-in support for dependency injection, promoting code reusability.
+- **Automatic Interactive API Docs**: Automatically generates interactive API documentation with Swagger UI and ReDoc.
+- **Testing**: Includes unit tests for ensuring functionality and reliability. 
